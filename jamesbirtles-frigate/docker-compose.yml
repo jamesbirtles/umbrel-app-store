@@ -11,7 +11,7 @@ services:
     privileged: true # this may not be necessary for all setups
     restart: on-failure
     image: ghcr.io/blakeblackshear/frigate:0.18.1@sha256:ae4ee2505e4dba6313b02bf5e8eea6c35fb1119f7087b9f684082be0a9fa0a71
-    shm_size: "128mb" # update for your cameras based on calculation above
+    shm_size: "2gb" # 10 cameras at 1080p; recalculate for your camera resolutions
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${APP_DATA_DIR}/data/config:/config

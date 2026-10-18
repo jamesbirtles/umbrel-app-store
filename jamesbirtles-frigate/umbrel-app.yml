@@ -1,5 +1,13 @@
 manifestVersion: 1.1
 id: jamesbirtles-frigate
+folderAccess:
+  - id: media-storage
+    name: Media Storage
+    note: Choose where Frigate stores recordings, snapshots and exports. Move existing media to the new folder before switching.
+    mounts:
+      - service: web
+        targetPath: /media/frigate
+        readOnly: false
 category: automation
 name: Frigate
 version: "0.18.1"
@@ -13,7 +21,9 @@ description: >-
   🛠️ SET-UP
 
 
-  - You can configure your cameras directly within the Frigate app, there is no need to manually edit the configuration files.
+  - New installs start without a placeholder camera. Add cameras in Settings → Global configuration → Camera management.
+
+  - On umbrelOS 2.0, choose a host, external-drive, or network-share folder for recordings, snapshots, and exports in Frigate's Umbrel app settings. Move existing media before changing folders.
 
 
   - Sign in to Frigate with username `admin` and the "default app password" displayed on Frigate's page in the app store (shown after install). The same default app password is also used as your RTSP password if needed.
